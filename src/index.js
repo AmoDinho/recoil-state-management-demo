@@ -15,7 +15,8 @@ const client = new ApolloClient({
 console.log("circuitsQuery", circuitsQuery);
 
 const CircuitBootstrap = () => {
-  useRecoilValue(circuitsQuery);
+  const circuits = useRecoilValue(circuitsQuery);
+  console.log("ccc", circuits);
   return <></>;
 };
 ReactDOM.render(
