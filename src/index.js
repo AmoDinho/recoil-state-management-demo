@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import ReactDOM from "react-dom";
 import "./styles/tailwind.css";
 import App from "./App";
@@ -12,11 +12,13 @@ const client = new ApolloClient({
 });
 ReactDOM.render(
   <React.StrictMode>
-    <RecoilRoot>
-      <ApolloProvider client={client}>
-        <App />
-      </ApolloProvider>
-    </RecoilRoot>
+    <Suspense fallback={<div>...loading</div>}>
+      <RecoilRoot>
+        <ApolloProvider client={client}>
+          <App />
+        </ApolloProvider>
+      </RecoilRoot>
+    </Suspense>
   </React.StrictMode>,
   document.getElementById("root")
 );
