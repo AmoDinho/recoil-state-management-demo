@@ -5,4 +5,8 @@ const driverState = atom({
   default: ["Max Verstappen", "Lando Norris"],
 });
 
-export { driverState };
+const circuitState = atom({
+  key: "circuitState",
+  default: [],
+});
+export { driverState, circuitState };
