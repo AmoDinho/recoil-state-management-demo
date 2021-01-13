@@ -1,9 +1,9 @@
 import React from "react";
-import { useRecoilState } from "recoil";
+import { useRecoilValue } from "recoil";
 import { driverState } from "../state/atoms";
 import HeadingOne from "../components/HeadingOne";
 const Index = () => {
-  const [drivers, setDrivers] = useRecoilState(driverState);
+  const drivers = useRecoilValue(driverState);
   return (
     <>
       <HeadingOne className="text-center text-blue-500">
