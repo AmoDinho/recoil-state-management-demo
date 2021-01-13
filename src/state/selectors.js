@@ -18,8 +18,7 @@ const driverQuery = selectorFamily({
     const driverResponse = await axios.get(
       `http://ergast.com/api/f1/drivers/${driverName}.json`
     );
-    console.log("driverResponse.data", driverResponse.data);
-    return driverResponse.data;
+    return driverResponse.data.MRData.DriverTable.Drivers[0];
   },
   set: ({ set }, newValue) => set(singleDriverState, newValue),
 });
