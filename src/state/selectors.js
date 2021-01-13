@@ -1,6 +1,6 @@
-import { selector } from "recoil";
+import { selector, selectorFamily } from "recoil";
 import axios from "axios";
-import { circuitState } from "./atoms";
+import { circuitState, singleDriverState } from "./atoms";
 const circuitsQuery = selector({
   key: "circuits",
   get: async () => {
@@ -10,6 +10,18 @@ const circuitsQuery = selector({
     return circuitResponse.data.MRData.CircuitTable.Circuits;
   },
   set: ({ set }, newValue) => set(circuitState, newValue),
+});
+
+const driverQuery = selectorFamily({
+  key: "driver",
+  get: (driverName) => async () => {
+    const driverResponse = await axios.get(
+      `http://ergast.com/api/driver/${driverName}`
+    );
+    console.log("driverResponse.data", driverResponse.data);
+    return driverResponse.data;
+  },
+  set: ({ set }, newValue) => set(singleDriverState, newValue),
 });
 
 export { circuitsQuery };
