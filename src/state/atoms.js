@@ -9,4 +9,9 @@ const circuitState = atom({
   key: "circuitState",
   default: [],
 });
-export { driverState, circuitState };
+
+const singleDriverState = atom({
+  key: "singleDriverState",
+  default: {},
+});
+export { driverState, circuitState, singleDriverState };
