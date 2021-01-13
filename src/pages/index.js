@@ -8,10 +8,11 @@ const Index = (props) => {
   return (
     <>
       <HeadingOne className="text-center text-blue-500">
-        This is the home page of the app!
+        Recoil Statemangement Demo
       </HeadingOne>
       {drivers.map((driver, index) => (
         <div
+          className="cursor-pointer"
           key={index}
           onClick={() => props.navigate(`/driver/${driver.split(" ")[1]}`)}
         >
