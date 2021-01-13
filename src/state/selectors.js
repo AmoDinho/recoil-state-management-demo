@@ -24,4 +24,4 @@ const driverQuery = selectorFamily({
   set: ({ set }, newValue) => set(singleDriverState, newValue),
 });
 
-export { circuitsQuery };
+export { circuitsQuery, driverQuery };
