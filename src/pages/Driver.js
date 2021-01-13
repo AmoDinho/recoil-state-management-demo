@@ -1,7 +1,14 @@
 import React from "react";
-
+import { useRecoilValue } from "recoil";
+import { driverQuery } from "../state/selectors";
 const Driver = (props) => {
-  return <></>;
+  const driver = useRecoilValue(driverQuery());
+
+  return (
+    <>
+      <p>This is the page of [drivername]</p>
+    </>
+  );
 };
 
 export default Driver;
