@@ -2,7 +2,8 @@ import React from "react";
 import { useRecoilValue } from "recoil";
 import { driverQuery } from "../state/selectors";
 const Driver = (props) => {
-  const driver = useRecoilValue(driverQuery(props.driverId));
+  console.log("props", props);
+  const driver = useRecoilValue(driverQuery(props.driverID));
 
   return (
     <>

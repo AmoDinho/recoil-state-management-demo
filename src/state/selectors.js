@@ -16,7 +16,7 @@ const driverQuery = selectorFamily({
   key: "driver",
   get: (driverName) => async () => {
     const driverResponse = await axios.get(
-      `http://ergast.com/api/driver/${driverName}`
+      `http://ergast.com/api/f1/drivers/${driverName}.json`
     );
     console.log("driverResponse.data", driverResponse.data);
     return driverResponse.data;
