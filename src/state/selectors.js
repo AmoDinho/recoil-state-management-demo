@@ -5,7 +5,7 @@ const circuitsQuery = selector({
   key: "circuits",
   get: async () => {
     const circuitResponse = await axios.get(
-      `http://ergast.com/api/f1/2021/circuits.json`
+      `https://ergast.com/api/f1/2021/circuits.json`
     );
     return circuitResponse.data.MRData.CircuitTable.Circuits;
   },
@@ -16,7 +16,7 @@ const driverQuery = selectorFamily({
   key: "driver",
   get: (driverName) => async () => {
     const driverResponse = await axios.get(
-      `http://ergast.com/api/f1/drivers/${driverName}.json`
+      `https://ergast.com/api/f1/drivers/${driverName}.json`
     );
     return driverResponse.data.MRData.DriverTable.Drivers[0];
   },
