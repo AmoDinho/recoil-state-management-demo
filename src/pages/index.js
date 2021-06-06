@@ -16,7 +16,7 @@ const Index = (props) => {
           key={index}
           onClick={() => props.navigate(`/driver/${driver.split(" ")[1]}`)}
         >
-          {driver}
+          {driver} Click me
         </div>
       ))}
     </>
